@@ -141,4 +141,4 @@ jobs:
         workflow: Deploy
         repo: Daryasse/test-deployment
         token: ${{ secrets.CI_TOKEN }}
-        inputs: '{ "app": "test-app", "version": 4" }'
+        inputs: '{ "app": "test-app", "version": "4" }'
