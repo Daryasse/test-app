@@ -10,7 +10,6 @@
 	</parent>
 	<groupId>pl.pbak.demo</groupId>
 	<artifactId>test</artifactId>
-	<version>local</version>
 	<name>Test App</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
