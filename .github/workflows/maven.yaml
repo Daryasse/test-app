@@ -189,6 +189,7 @@ jobs:
         with:
           sbom-path: sbom.spdx.json
           subject-digest: ${{ steps.image-digest.outputs.digest }}
+          subject-name: docker.io/dashasel/test-app:latest
           show-summary: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload SBOM for Docker image
