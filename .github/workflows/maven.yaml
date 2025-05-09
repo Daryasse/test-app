@@ -102,12 +102,10 @@ jobs:
           name: app
           path: target/*.jar
           retention-days: 10
-      - name: List JARs
-        run: ls -lh target/
       - name: Generate SBOM for JAR
         uses: anchore/sbom-action@v0
         with:
-          path: 'target/test-2.6.4.jar'
+          path: target/
           format: spdx-json
           scan-type: 'file' 
       - name: Attest JAR SBOM
