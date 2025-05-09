@@ -107,7 +107,8 @@ jobs:
         with:
           path: target/
           format: spdx-json
-          scan-type: 'file' 
+          scan-type: 'file'
+          output-file: sbom.spdx.json
       - name: Attest JAR SBOM
         uses: actions/attest-sbom@v1
         with:
