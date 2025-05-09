@@ -178,17 +178,10 @@ jobs:
           image: docker.io/dashasel/test-app:latest
           format: spdx-json
           output-file: sbom.spdx.json
-      - name: Get image digest
-        id: image-digest
-        run: |
-          docker pull docker.io/your-namespace/test-app:latest
-          DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' docker.io/your-namespace/test-app:latest | cut -d'@' -f2)
-          echo "digest=$DIGEST" >> "$GITHUB_OUTPUT"
       - name: Attest Docker SBOM
         uses: actions/attest-sbom@v1
         with:
           sbom-path: sbom.spdx.json
-          subject-digest: ${{ steps.image-digest.outputs.digest }}
           subject-name: docker.io/your-namespace/test-app:latest
           show-summary: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
