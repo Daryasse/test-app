@@ -107,7 +107,7 @@ jobs:
       - name: Generate SBOM for JAR
         uses: anchore/sbom-action@v0
         with:
-          path: target/test-2.6.4.jar
+          path: 'target/test-2.6.4.jar'
           format: spdx-json
           scan-type: 'file' 
       - name: Attest JAR SBOM
