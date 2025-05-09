@@ -177,10 +177,14 @@ jobs:
         with:
           image: docker.io/dashasel/test-app:latest
           format: spdx-json
+          output-file: sbom.spdx.json
       - name: Attest Docker SBOM
         uses: actions/attest-sbom@v1
         with:
           sbom-path: sbom.spdx.json
+          subject: docker.io/dashasel/test-app:latest
+          show-summary: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload SBOM for Docker image
         uses: actions/upload-artifact@v4
         with:
