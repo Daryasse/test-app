@@ -115,6 +115,7 @@ jobs:
         uses: actions/attest-sbom@v1
         with:
           sbom-path: sbom.spdx.json
+          subject-path: target/test-2.6.4.jar
           show-summary: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload SBOM for JAR
