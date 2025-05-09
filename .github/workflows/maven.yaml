@@ -105,7 +105,7 @@ jobs:
       - name: Generate SBOM for JAR
         uses: anchore/sbom-action@v0
         with:
-          path: target/test-app*.jar
+          path: target/
           format: spdx-json
       - name: Upload SBOM for JAR
         uses: actions/upload-artifact@v4
